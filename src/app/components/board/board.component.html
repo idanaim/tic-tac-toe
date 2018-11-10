@@ -1,0 +1,14 @@
+<div class="result-action">
+  <div class="winner"
+       *ngIf="winner">Winner {{winner}}
+  </div>
+  <button class="new-game" (click)="newGame()">{{buttonText}}</button>
+</div>
+<div>
+  <div class="board" *ngFor="let row of rows">
+    <app-cell *ngFor="let col of rows"
+              [player]="board[col+row*3]"
+              (click)="action(col+row*3)">
+    </app-cell>
+  </div>
+</div>
